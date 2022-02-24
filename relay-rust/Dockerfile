@@ -1,5 +1,3 @@
-//cargo build --release --target=x86_64-pc-windows-gnu
-
 FROM rust:latest
 
 RUN apt update && apt upgrade -y
@@ -16,4 +14,4 @@ RUN rustup toolchain install stable-x86_64-pc-windows-gnu
 ADD . / app/
 WORKDIR /app
 
-CMD ["cargo", "build", "--target", "x86_64-pc-windows-gnu"]
+CMD ["cargo", "build", "--release", "--target", "x86_64-pc-windows-gnu"]
