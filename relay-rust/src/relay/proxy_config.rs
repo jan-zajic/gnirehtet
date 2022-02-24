@@ -51,9 +51,9 @@ lazy_static! {
                 println!("Gnirehtet Proxy Config: \n{:#?}", conf);
                 conf
             },
-            Err(_) => {
+            Err(error) => {
                 if !path.is_empty() {
-                    panic!("invalid conf file, please check {}", path);
+                    panic!("invalid conf file, please check {}! error: {}", path, error);
                 } else {
                     panic!("invalid conf file, -c args is none");
                 }
