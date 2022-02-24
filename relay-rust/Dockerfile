@@ -11,7 +11,4 @@ RUN rustup toolchain install stable-x86_64-pc-windows-gnu
 #   linker = "x86_64-w64-mingw32-gcc"
 #   ar = "x86_64-w64-mingw32-gcc-ar"
 
-ADD . / app/
-WORKDIR /app
-
 CMD ["cargo", "build", "--release", "--target", "x86_64-pc-windows-gnu"]
